@@ -116,6 +116,7 @@ switch_to_sign_in.onclick = (e) => {
 const switch_to_sign_up = document.getElementById(sign_up_link_id);
 switch_to_sign_up.onclick = (e) => {
     refreshSignUpFormValidationValues()
+    sign_in_btn.disabled = true;
     document.getElementById(sign_up_form_id).style.display = ""
     document.getElementById(sign_in_form_id).style.display = "none"
 }
@@ -129,7 +130,7 @@ sign_in_btn.disabled = true
 sign_up_btn.disabled = true
 
 sign_up_form.addEventListener('change', (event) => {
-    console.log("validatiob status", getValidationStatus()) // for demo purpose
+    console.log("validation status", getValidationStatus()) // for demo purpose
 
     if (getValidationStatus()) {
         sign_up_btn.disabled = false;
